@@ -1,0 +1,113 @@
+\documentclass{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath,epsfig}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[cmtip,arrow]{xy}
+\usepackage{url}
+\usepackage{enumerate}
+
+\begin{document}
+Rodr\'iguez Fitta Jos\'e Emanuel \\ \\
+\begin{enumerate}
+\item En una encuesta realizada a $100$ personas, se consult\'o sobre el medio de comunicaci\'on que usan para leer un diario de noticias. En la respuesta, $60$ mencionaron que lo hacen a trav\'es de la publicaci\'on impresa, $30$ en su versi\'on digital. Se tiene registrado que $20$ lo hacen en ambas, es decir, en el formato impreso y tambi\'en en digital. \\  \\ ¿Cu\'al es la probabilidad de que una persona elegida aleatoriamente lea el diario (exclusivamente) en la versi\'on impresa o en la versi\'on digial?
+\begin{itemize}
+\item La probabilidad de que el medio mediante el cual se lea un diario de noticias sea una publicaci\'on impresa es $P(I) = \frac{60}{100} = \frac{3}{5}$. 
+\item Mientras que la probabilidad de sea a trav\'es de un medio digital es $P(D) = \frac{30}{100} = \frac{3}{10}$.
+\item Y la probabilidad de que se haga en ambos medios es $ P(D\bigcap I ) = \frac{20}{100} = \frac{1}{5}$
+\end{itemize}
+Por lo cual la probabilidad de que una persona elegida al azar lea el diario en la version impresa o en la versi\'on digital es \\ $P(D\bigcup I ) = P(D) + P(I) - P(D \bigcap I) = \frac{3}{5} + \frac{3}{10} - \frac{1}{5} = \frac{7}{10}$
+
+\item De $10$ juegos disputados de un equipo deportivo, $5$ lo hace como local, $3$ como visitante y $2$ en una cancha neutral. Se sabe que, dado que es local, su probabilidad de ganar un juego es de $80\%$, si es visitante, esta disminuye a $20\%$ y en una cancha neutral su probabilidad (condicional) de victoria es $50\%$. \\ \\Determina la probabilidad total de ganar un partido para este equipo. Luego, dado que gan\'o, calcula la probabilidad condicional de que esta victoria haya sido como local.
+\begin{itemize}
+\item La probabilidad de jugar un juego como local es $P(L) = \frac{5}{10} = 0.5$
+\item La probabilidad de jugar un juego como visitante es $P(V) = \frac{3}{10} = 0.3$
+\item La probabilidad de jugar en una cancha neutral es $P(N) = \frac{2}{10} = \frac{1}{5} = 0.2$
+\item La probabilidad de ganar un juego dado que es local es $P(G|L) = 0.80$
+\item La probabilidad de ganar un juego dado que es visitante es $P(G|V) = 0.20$
+\item La probabilidad de ganar un juego dado que es en una cancha neutral es $P(G|N) = 0.50$
+\end{itemize}
+Entonces la probabilidad total de ganar es
+\begin{align*}
+P(G) &= P(G|L)P(L) + P(G|V)P(V) + P(G|N)P(N) \\
+&=  (0.80)(0.5) + (0.20)(0.3) + (0.5)(0.2) = 0.4 + 0.06 +0.1 = 0.56
+\end{align*}
+Y la probabilidad condicional de que la victoria sea como local es
+\begin{align*}
+P(L|G) = \frac{P(G|L)P(L)}{P(G)} = \frac{(0.80)(0.5)}{0.56}= 0.71
+\end{align*}
+
+\item Si $X$ toma los valores $0,1$ y $2$ con probabilidad $\frac{1}{3}$ cada uno. Determina su media (esperanza) y varianza.
+\\ La funci\'on de probabilidad es 
+\begin{equation*}
+P(X = j) = \frac{1}{3},
+\end{equation*}
+para $j = 1, 2, 3$. La media (esperanza) es
+\begin{align*}
+E[X] = x_0P(X = x_1) + x_1P(X = x_2) + x_2P(X = x_3) = 0\left( \frac{1}{3}\right) + 1\left(\frac{1}{3}\right) + 2\left(\frac{1}{3}\right) = 1.
+\end{align*}
+La varianza es
+\begin{align*}
+\mu_2 = Var(X) &= E[(X - \mu )^2] = (0 - 1)^2 P(X = x_1) + (1 - 1)^2P(X = x_2) + (2 - 1)^2P(X = x_3)  \\
+& = 1\left( \frac{1}{3}\right) + 0 \left(\frac{1}{3}\right) + 1\left(\frac{1}{3}\right) = \frac{2}{3}
+\end{align*}
+
+\item Para la funci\'on $f(x) = c$, $0 <x < 3$, halla la constante $c$ que le permita ser una funci\'on de densidad. Escribe su funci\'on de distribuci\'on. Calcula su media y variana.
+\\ \\
+Para ser funci\'on de densidad se debe cumplir
+\begin{align*}
+\int_{-\infty} ^{\infty} f(x) dx = 1
+\end{align*}
+entonces
+\begin{align*}
+1 = \int_{-\infty} ^{\infty} f(x) dx = \int_0 ^3cdx =cx|_0^3 = 3c
+\end{align*}
+por lo que $c= \frac{1}{3}$. Luego la funci\'on de distribuci\'on es
+\begin{align*}
+F(x) = P(X \leq x) = \int_{-\infty}^x f(u)du = \int_{0}^x\frac{1}{3}du = \frac{1}{3}x
+\end{align*}
+Es claro que se cumple $f(x ) = \frac{d}{dx}F(x)$. La esperanza o media es
+\begin{align*}
+E[X] = \int_{-\infty}^{\infty}xf(x) dx = \int_0^3\frac{1}{3}xdx = \frac{1}{6}x^2|_0^3 = \frac{1}{6}(9) = \frac{3}{2}
+\end{align*}
+La varianza es 
+\begin{align*}
+Var(X) &= \int_{-\infty}^{\infty}(x- \mu)^2f(x)dx = \int_0^3 \frac{1}{3}\left(x-\frac{3}{2}\right)^2dx = \frac{1}{3}\int_0^3\left(x^2 - 3x + \frac{9}{4}\right)dx& \\
+& = \left(\frac{x^3}{9} - \frac{1}{2}x^2+\frac{3}{4}x\right)|_0^3 \\
+& = 3-\frac{9}{2}+\frac{9}{4} = \frac{3}{4}
+\end{align*}
+
+\item Sean $X_1$ y $X_2$ variables aleatorias con funci\'on de distribuci\'on continua, dada por
+\begin{align*}
+F(x_1, x_2) = \left\{
+\begin{array}{lcc}
+(1 - e^{-x_1})(1-e^{-x_2}) & si & x_1 >0, x_2 > 0, \\
+0 & \text{en otro caso} & .
+\end{array}
+\right.
+\end{align*}
+A partir de esta, determina la funci\'on de densidad conjunta. Encuentra las densidades marginales y verifica si las variables aleatorias son independientes. Finalmente, calcula la distribuci\'on condicional de $X_1$ dada $X_2$.
+\\ \\
+La funci\'on de densidad conjunta es
+\begin{align*}
+f(x_1, x_2) = \frac{\partial ^2}{\partial x_1 \partial x_2} F(x_1, x_2)
+\end{align*}
+Entonces
+\begin{align*}
+f(x_1, x_2) &= \frac{\partial ^2}{\partial x_1 \partial x_2}(1 - e^{-x_1})(1-e^{-x_2}) \\
+&= \frac{\partial}{\partial x_1}e^{-x_2}(1-e^{-x_1}) = e^{-x_1}e^{-x_2}
+\end{align*}
+si $x_1 >0, x_2 > 0$ y $0$ en otro caso. Las densidad marginales ser\'an
+\begin{align*}
+f(x_1) &= f_{X_1}(x_1) = \int_{-\infty}^{\infty}f(x_1,x_2)dx_2 = \int_0^{\infty} e^{-x_1}e^{-x_2} dx_2 = -e^{-x_1}e^{-x_2}|_0^{\infty} = e^{-x_1} \\
+f(x_2) &= f_{X_2}(x_2) = \int_{-\infty}^{\infty}f(x_1,x_2)dx_1 = \int_0^{\infty} e^{-x_1}e^{-x_2} dx_1 = -e^{-x_2}e^{-x_1}|_0^{\infty} = e^{-x_2}
+\end{align*}
+dado que $f_{X_1, X_2}(x_1,x_2) = f_{X_1}(x_1)f_{X_2}(x_2)$ entonces son variables aleatorias independientes. Por \'ultimo la distribuci\'on condicional de $X_1$ dada $X_2$ es
+\begin{align*}
+F(x_1|x_2) = \int_{-\infty}^{x_1} \frac{f(u,y)}{f(y)}du = \int_0^{x_1}\frac{e^{-u}e^{-y}}{e^{-y}} du = -e^{-u}|_0 ^{x_1} =1 -e^{-x_1}
+\end{align*}
+\end{enumerate}
+\end{document}

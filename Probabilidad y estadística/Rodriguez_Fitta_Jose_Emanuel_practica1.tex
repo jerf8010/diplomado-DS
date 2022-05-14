@@ -1,0 +1,51 @@
+\documentclass{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath,epsfig}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[cmtip,arrow]{xy}
+\usepackage{url}
+\usepackage{enumerate}
+
+\begin{document}
+Rodr\'iguez Fitta Jos\'e Emanuel \\ \\
+
+En una empresa de manufactura hay $5$ m\'aquinas para fabricar art\'iculos en serie. Existe una probabilidad $p$ de que una m\'aquina opere hasta fabricar un art\'iculo defectuoso. Dado el valor $p$, los art\'iculos son independientes entre si. \\ 
+Las m\'aquinas se ponen a prueba contando el n\'umero de art\'iculos fabricados antes de que se produzca un art\'iculo defectuoso.
+\begin{enumerate}
+\item Establece una distribuci\'on a priori apropiada para el par\'ametro $p$. \\ \\
+Proponemos una distribuci\'on a priori Beta para $p$
+\begin{equation*}
+\pi (p ) = \frac{ \Gamma (\alpha + \beta )}{\Gamma (\alpha)\Gamma (\beta )  } p ^{\alpha -1}(1 - p )^{\beta -1}
+\end{equation*}
+
+\item Dado el contexto ¿Cu\'al es tu propuesta para la verosimilitud de los datos? \\ 
+Dado el contexto notamos que cada $x_i$ tiene una distribuci\'on geom\'etrica, esto es $x_i \sim Geo(p)$ por lo que la funci\'on de densidad es
+\begin{equation*}
+f(x_i| p ) = p(1 - p)^{x_i -1}
+\end{equation*}
+con $i = 1,2,3,4,5$. La muestra de observaciones $\mathbf{x} = (x_1, x_2, x_3, x_4, x_5)'$ tiene una distribuci\'on conjunta i.e verosimilitud
+\begin{align*}
+f(\mathbf{x}| \mathbf{p}) &= \prod _ {i = 1} ^{5}f(x_i | p) = \prod _{i=1} ^5 p(1 - p)^{x_i -1} \\
+& = p^5(1- p )^{\sum _{i = 1}^5 (x_i -1)} = p^5(1-p)^{5\bar{x} - 5} 
+\end{align*}
+
+\item Realiza una inferencia bayesiana para encontrar te\'oricamente la distribuci\'on posterior de la probabilidad $p$ \\
+\begin{align*}
+p(\mathbf{ p} | \mathbf{x} )  & \propto f(\mathbf{x} | \mathbf{ p}) \pi(p) =  \frac{ \Gamma (\alpha + \beta )}{\Gamma (\alpha)\Gamma (\beta )  } [ p(1-p)^{\bar{x} - 1} ] ^5 p ^{\alpha -1}(1 - p )^{\beta -1} \\
+& =\frac{ \Gamma (\alpha + \beta )}{\Gamma (\alpha)\Gamma (\beta )  }  p ^{\alpha + 4} (1- p)^{5\bar{x} + \beta-6}
+\propto p ^{\alpha + 4} (1- p)^{5\bar{x} + \beta-6}
+\end{align*}
+Por lo tanto $p | \mathbf{x} \sim Beta( \alpha + 5, 5\bar{x} + \beta - 5)$.
+
+\item Dado que el primer art\'iculo defectuoso fue el n\'umero: $10, 13, 9, 11, 13$ respectivamente, en cada una de las $5$ m\'aquinas. Escribe expl\'icitamente (con sus par\'ametros) la distribuci\'on posterior y de ser posible realiza una gr\'afica de esta. \\ 
+En este caso $\mathbf{x} = (10, 13, 9, 11, 13)$ por lo que  $\bar{x} = 11.2$ y la distribuci\'on posterior es
+\begin{align*}
+p(\mathbf{ p} | \mathbf{x} )  & \propto p ^{\alpha + 4} (1- p)^{5\bar{x} + \beta-6} = p^{\alpha + 4}(1-p)^{\beta  + 50}
+\end{align*}
+Por lo tanto $p | \mathbf{x} \sim Beta( \alpha + 5,  \beta + 51)$.
+\end{enumerate}
+\end{document}
