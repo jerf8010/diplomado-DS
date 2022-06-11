@@ -1,0 +1,26 @@
+DataOps: Procesos
+DataOps introduce en su flujo de trabajo los conceptos de CI y CD
+(Continuous Integration y Continuous Deployment)
+
+1. Sandbox Management - Proceso de crear ambientes aislados para
+experimentación.Asegurar que las tecnologías necesarias 
+para las implementaciones puedan ser accesibles al negocio en términos de costos y puedan 
+ajustarse al crecimiento del mismo.
+
+2. Development - Diseño y construcción de las apps. Diseño de nuevos procesos para crecimiento y extensibilidad. Diseñar flujos de datos
+que se acomoden al volumen y variedad de los datos. Automatizar tantas etapas del flujo de datos como sea posible.
+
+3. Orchestrate - Hay dos etapas de orquestación, la primera
+orquesta una copia representativa de los datos para pruebas y desarrollo
+y la segunda orquesta la data factory. Definir reglas para una posible capa semántica. Garantizar uniformidad en el leguaje 
+que se habla en cada sector del negocio y que esté acorde con lo que los datos son y no son.
+
+4. Test - La etapa de prueba apunta al código en lugar de a los datos. 
+ Sin embargo, en las etapas de orquestación, la prueba de datos es una tarea principal.
+Establecer medidas de progreso y desempeño en cada etapa del flujo de datos.
+
+5. Deploy - Ocurre después del éxito en el test, el código se despliega
+a producción (Es similar en DevOps)
+
+6. Monitor - En todas las etapas se lleva a cabo el monitoreo,
+pero principalmente en la etapa final. Identificar cuellos de botella mediante medidas de performance y optimizarlos.

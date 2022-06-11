@@ -1,0 +1,18 @@
+
+1. Establecer medidas de progreso y desempeño en cada etapa del flujo de datos.
+
+2. Definir reglas para una posible capa semántica. Garantizar uniformidad en el leguaje 
+que se habla en cada sector del negocio y que esté acorde con lo que los datos son y no son.
+
+3. Automatizar tantas etapas del flujo de datos como sea posible.
+
+4. Identificar cuellos de botella mediante medidas de performance y optimizarlos.
+
+5. Establecer una disciplina de gobernanza, enfocada en la propiedad de los datos,
+ la transparencia, el control de los datos y un linaje de los mismos que permita 
+ rastrear todo el flujo de trabajo.
+ 
+6. Diseño de nuevos procesos para crecimiento y extensibilidad. Diseñar flujos de datos
+que se acomoden al volumen y variedad de los datos. Asegurar que las tecnologías necesarias 
+para las implementaciones puedan ser accesibles al negocio en términos de costos y puedan 
+ajustarse al crecimiento del mismo.
